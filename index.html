@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Site Interativo</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Meu Site!</h1>
+        <button id="myButton">Clique Aqui</button>
+        <p id="message" class="hidden">Você clicou no botão!</p>
+    </div>
+
+    <script>
+        const button = document.getElementById('myButton');
+        const message = document.getElementById('message');
+
+        button.addEventListener('click', () => {
+            message.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
