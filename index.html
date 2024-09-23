@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogadores de Futebol</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Site Interativo</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Bem-vindo ao Meu Site!</h1>
-        <button id="myButton">Clique Aqui</button>
-        <p id="message" class="hidden">Você clicou no botão!</p>
-    </div>
-
-    <script>
-        const button = document.getElementById('myButton');
-        const message = document.getElementById('message');
-
-        button.addEventListener('click', () => {
-            message.classList.toggle('hidden');
-        });
-    </script>
+    <header>
+        <h1>Jogadores de Futebol</h1>
+    </header>
+    <main>
+        <div class="player-card">
+            <img src="https://via.placeholder.com/150" alt="Jogador 1">
+            <h2>Neymar Jr.</h2>
+        </div>
+        <div class="player-card">
+            <img src="https://via.placeholder.com/150" alt="Jogador 2">
+            <h2>Messi</h2>
+        </div>
+        <div class="player-card">
+            <img src="https://via.placeholder.com/150" alt="Jogador 3">
+            <h2>Cristiano Ronaldo</h2>
+        </div>
+        <div class="player-card">
+            <img src="https://via.placeholder.com/150" alt="Jogador 4">
+            <h2>Kylian Mbappé</h2>
+        </div>
+    </main>
 </body>
 </html>
