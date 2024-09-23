@@ -47,6 +47,8 @@ h1 {
 
 .player img {
     border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }
 
 .player:hover {
@@ -57,4 +59,8 @@ h1 {
     display: none;
     margin-top: 10px;
     font-size: 0.9em;
+}
+
+.details p {
+    margin: 5px 0;
 }

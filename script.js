@@ -1,35 +1,35 @@
 const players = [
     {
-        name: "Jogador 1",
+        name: "Neymar Jr.",
         position: "Atacante",
-        club: "Time A",
-        image: "https://via.placeholder.com/100"
+        club: "Paris Saint-Germain",
+        image: "https://via.placeholder.com/100/0000FF/FFFFFF?text=Neymar"
     },
     {
-        name: "Jogador 2",
-        position: "Meio-campista",
-        club: "Time B",
-        image: "https://via.placeholder.com/100"
+        name: "Cristiano Ronaldo",
+        position: "Atacante",
+        club: "Al Nassr",
+        image: "https://via.placeholder.com/100/FF0000/FFFFFF?text=CR7"
     },
     {
-        name: "Jogador 3",
-        position: "Defensor",
-        club: "Time C",
-        image: "https://via.placeholder.com/100"
+        name: "Lionel Messi",
+        position: "Atacante",
+        club: "Inter Miami",
+        image: "https://via.placeholder.com/100/008000/FFFFFF?text=Messi"
     },
     {
-        name: "Jogador 4",
-        position: "Goleiro",
-        club: "Time D",
-        image: "https://via.placeholder.com/100"
+        name: "Kylian Mbappé",
+        position: "Atacante",
+        club: "Paris Saint-Germain",
+        image: "https://via.placeholder.com/100/FFFF00/000000?text=Mbappé"
     }
 ];
 
-function displayPlayers(players) {
+function displayPlayers(playersList) {
     const playersGrid = document.getElementById('players');
     playersGrid.innerHTML = '';
 
-    players.forEach(player => {
+    playersList.forEach(player => {
         const playerDiv = document.createElement('div');
         playerDiv.classList.add('player');
         playerDiv.onclick = () => toggleDetails(playerDiv);
