@@ -4,54 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogadores de Futebol</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 800px; margin: auto; }
+        .search { margin: 20px 0; }
+        .player { border: 1px solid #ccc; margin: 10px; padding: 10px; display: flex; }
+        .player img { width: 100px; height: 100px; margin-right: 10px; }
+        .details { display: none; }
+    </style>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Jogadores de Futebol</h1>
-    </header>
-    <main>
-        <div class="player-card">
-            <img src="https://via.placeholder.com/150" alt="Neymar Jr.">
-            <h2>Neymar Jr.</h2>
-            <p>Posição: Atacante</p>
-            <button class="info-btn">Mais Info</button>
-            <div class="info" style="display: none;">
-                <p>Clube: PSG</p>
-                <p>Gols: 300+</p>
+        <input type="text" id="search" class="search" placeholder="Buscar jogador...">
+        <div id="players">
+            <div class="player" onclick="toggleDetails(this)">
+                <img src="https://via.placeholder.com/100" alt="Jogador 1">
+                <div>
+                    <h2>Jogador 1</h2>
+                    <p class="details">Posição: Atacante<br>Clube: Time A</p>
+                </div>
             </div>
-        </div>
-        <div class="player-card">
-            <img src="https://via.placeholder.com/150" alt="Messi">
-            <h2>Messi</h2>
-            <p>Posição: Atacante</p>
-            <button class="info-btn">Mais Info</button>
-            <div class="info" style="display: none;">
-                <p>Clube: PSG</p>
-                <p>Gols: 700+</p>
+            <div class="player" onclick="toggleDetails(this)">
+                <img src="https://via.placeholder.com/100" alt="Jogador 2">
+                <div>
+                    <h2>Jogador 2</h2>
+                    <p class="details">Posição: Meio-campista<br>Clube: Time B</p>
+                </div>
             </div>
+            <!-- Adicione mais jogadores aqui -->
         </div>
-        <div class="player-card">
-            <img src="https://via.placeholder.com/150" alt="Cristiano Ronaldo">
-            <h2>Cristiano Ronaldo</h2>
-            <p>Posição: Atacante</p>
-            <button class="info-btn">Mais Info</button>
-            <div class="info" style="display: none;">
-                <p>Clube: Al Nassr</p>
-                <p>Gols: 800+</p>
-            </div>
-        </div>
-        <div class="player-card">
-            <img src="https://via.placeholder.com/150" alt="Kylian Mbappé">
-            <h2>Kylian Mbappé</h2>
-            <p>Posição: Atacante</p>
-            <button class="info-btn">Mais Info</button>
-            <div class="info" style="display: none;">
-                <p>Clube: PSG</p>
-                <p>Gols: 200+</p>
-            </div>
-        </div>
-    </main>
-    <script src="script.js"></script>
+    </div>
+
+    <script>
+        function toggleDetails(element) {
+            const details = element.querySelector('.details');
+            details.style.display = details.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.getElementById('search').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const players = document.querySelectorAll('.player');
+
+            players.forEach(player => {
+                const name = player.querySelector('h2').innerText.toLowerCase();
+                player.style.display = name.includes(query) ? 'flex' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>
